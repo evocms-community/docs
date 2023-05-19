@@ -187,3 +187,9 @@ $processor->getCurrentDelivery();
 ```php
 $processor->getCurrentPayment();
 ```
+
+#### Использование API Commerce во внешних файлах
+Если ваш код вынесен в пакеты или отдельные файлы с подключением через index.php из корня сайта, необходимо проинициализировать Commerce перед вызовом методов:
+```php
+$modx->invokeEvent('OnWebPageInit');
+```
