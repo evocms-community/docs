@@ -6,7 +6,7 @@
 
 ## Як внести свій вклад
 1. Для початку у вас має бути акаунт на GitHub, якщо немає - [то його дуже просто зробити](https://github.com/join).
-2. Зробити форк [https://github.com/evolution-cms/docs/](https://github.com/evolution-cms/docs/) цього проекта собі, натиснувши кнопку "Fork" праворуч вгорі.
+2. Зробити форк [https://github.com/evocms-community/docs/](https://github.com/evocms-community/docs/) цього проекта собі, натиснувши кнопку "Fork" праворуч вгорі.
 3. Клонувати репозиторій до себе на диск і працювати з ним локально, як і всі (якщо ви розробник)
 4. Якщо ви не розробник, то можете просто відредагувати файли *.md прямо на GitHub.
 5. Коли ви все зробите, вам треба [зробити "Pull Request"](https://help.github.com/articles/creating-a-pull-request) і відправити ваші зміни в цей репозиторій.
