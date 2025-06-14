@@ -1,0 +1,44 @@
+# Пример бесплатной доставки в зависимости от суммы заказа
+
+```php
+$title = 'Доставка';
+$price = ci()->currency->convertToActive(600);
+
+switch ($modx->Event->name) {
+    case 'OnRegisterDelivery': {
+        // Регистрация доставки
+        $params['rows']['fixed'] = [
+            'title' => $title.' ('.$price.'р.)',
+            'price' => $price,
+        ];
+
+        break;
+    }
+
+    case 'OnCollectSubtotals': {
+        $processor = $modx->commerce->loadProcessor();
+
+        if ($processor->isOrderStarted() && $processor->getCurrentDelivery() == 'fixed') {
+            // Если заказ в процессе оформления и эта доставка выбрана,
+            // добавляем стоимость доставки в заказ
+            //если стоимость доставки более 14000, то доставка - бесплатная
+            if($params['total'] < 14000){
+      				$params['total'] += $price;
+      				$params['rows']['fixed'] = [
+                      'title' => $title.' ('.$price.'р.)',
+                      'price' => $price,
+            ];
+      			}else{
+      				$price = 0;
+      				$params['total'] += $price;
+      				$params['rows']['fixed'] = [
+                      'title' => $title.' ('.$price.'р.)',
+                      'price' => $price,
+                  ];
+      			}
+        }
+        break;
+    }
+}
+
+```
