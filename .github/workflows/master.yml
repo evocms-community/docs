@@ -11,9 +11,6 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-        
       - name: update
         uses: appleboy/ssh-action@master
         with:
